@@ -9,10 +9,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Node
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          # Action runs: using: node20 as defined in
+          # https://github.com/cypress-io/github-action/blob/master/action.yml
+          # Node.js minor version is aligned to
+          # https://github.com/actions/runner/blob/main/src/Misc/externals.sh
+          node-version: 20.8.1
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       # https://github.com/cypress-io/github-action
