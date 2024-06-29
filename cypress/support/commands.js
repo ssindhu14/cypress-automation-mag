@@ -96,8 +96,8 @@ Cypress.Commands.add("restoreLocalStorage", () => {
 function loginViaAuth0Ui(host, username, password) {
   // App landing page redirects to Auth0.
   cy.visit(host);
-  //cy.get('a[href="/login/"]').click();
-  //cy.wait(5000)
+  cy.get('a[href="/login/"]').click();
+  cy.wait(5000)
   // Login on Auth0.
   cy.on('uncaught:exception', (err, runnable) => {
     return false

@@ -32,7 +32,7 @@ obj.forEach(({ user, email, password }) => {
       myAccountPage.getLoggedUserName().should('include.text', user);
       myAccountPage.getManagePreferenceLink().click({ force: true });
       cy.wait(5000);
-      globalPreferencesPage()
+      globalPreferencesPage.getIframe()
         .then(function ($iframe) {
           const $body = $iframe.contents().find('body')
           cy.wrap($body).find('section.page-header h1').should('contain.text', 'Global Preferences');
