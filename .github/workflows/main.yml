@@ -2,7 +2,7 @@ name: E2E on Chrome
 on:
  schedule:
     # Every 10 minutes
-    - cron: '*/10 * * * *'
+    - cron: '0 6 * * *'
  push:
   branches:
     - main
