@@ -12,7 +12,7 @@ module.exports = defineConfig({
     runMode: 1,
     // Configure retry attempts for `cypress open`
     // Default is 0
-    openMode: 2
+    openMode: 1
   },
   reporterOptions: {
     charts: true,
