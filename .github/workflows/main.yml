@@ -43,3 +43,11 @@ jobs:
         with:
           name: cypress-videos
           path: cypress/videos
+      
+      - name: Slack Notification
+        uses: act10ns/slack@v2
+        with:  
+          status: ${{ job.status}}
+          steps: ${{ toJson(steps)}}
+          channel: '#github_workflows'
+          if: always()
